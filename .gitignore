@@ -1,0 +1,4 @@
+# .gitignore
+
+# directorios que no deseas incluir
+.idea/dataSources.xml
