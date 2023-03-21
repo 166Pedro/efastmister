@@ -26,3 +26,14 @@ class Perfil(models.Model):
             url = ''
 
         return url
+
+class Rol(models.Model):
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    name = models.CharField(max_length=200, blank=True, null=True)
+    user = models.ManyToManyField(User)
+
+    def __str__(self):
+        return str(self.name)
+
+    class Meta:
+        ordering = ['id']
