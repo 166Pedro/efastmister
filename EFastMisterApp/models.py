@@ -3,7 +3,6 @@ from django.db import models
 from UsersApp.models import *
 # Create your models here.
 class Comunidad(models.Model):
-    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     nombre_comunidad = models.CharField(max_length=200, blank=True, null=True)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     administrador = models.OneToOneField(
