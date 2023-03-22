@@ -1,6 +1,6 @@
 # .gitignore
 
 # directorios que no deseas incluir
-.idea/dataSources.xml
+../efastmister/.idea/dataSources.xml
 UsersApp/migrations/
 EFastMisterApp/migrations/
