@@ -7,10 +7,11 @@ from UsersApp.models import *
 class Comunidad(models.Model):
     nombre_comunidad = models.CharField(max_length=200, blank=True, null=True)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
-    administrador = models.OneToOneField(
+    administrador = models.ForeignKey(
         User,
         on_delete=models.CASCADE
     )
+    miembros = models.ManyToManyField(User, related_name='miembros_comunidades')
 
     def __str__(self):
         return str(self.nombre_comunidad)
