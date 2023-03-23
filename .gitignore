@@ -2,3 +2,5 @@
 
 # directorios que no deseas incluir
 .idea/dataSources.xml
+UsersApp/migrations/
+EFastMisterApp/migrations/
