@@ -94,4 +94,43 @@ class Jugadores(models.Model):
     class Meta:
         ordering = ['id']
 
+class puntosJornada(models.Model):
+    jornada = models.IntegerField(null=True)
+    puntosJ = models.IntegerField(null=True)
+    equipo = models.ForeignKey(
+        Equipos,
+        on_delete=models.CASCADE,
+        null=True
+    )
+
+    def __str__(self):
+        return str(self.jornada)
+
+    class Meta:
+        ordering = ['id']
+
+
+class puntosJugadores(models.Model):
+    jornada = models.IntegerField(null=True)
+    puntosJ = models.IntegerField(null=True)
+    equipo = models.ForeignKey(
+        Equipos,
+        on_delete=models.CASCADE,
+        null=True
+    )
+    jugadores = models.ForeignKey(
+        Jugadores,
+        on_delete=models.CASCADE,
+        null=True
+    )
+
+    def __str__(self):
+        return str(self.jornada)
+
+    class Meta:
+        ordering = ['id']
+
+
+
+
 
