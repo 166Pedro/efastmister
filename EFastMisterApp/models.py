@@ -76,17 +76,17 @@ class Equipos(models.Model):
         ordering = ['id']
 
 class Jugadores(models.Model):
-    nombre = models.CharField(max_length=200, blank=True, null=True)
-    posicion = models.CharField(max_length=200, blank=True, null=True)
-    puntuacion = models.IntegerField(null=True)
-    valor = models.IntegerField(null=True)
+    nombre = models.CharField(max_length=200, blank=True, null=False)
+    posicion = models.CharField(max_length=200, blank=True, null=False)
+    puntuacion = models.IntegerField(null=False)
+    valor = models.IntegerField(null=False)
     equipoReal = models.CharField(max_length=200, blank=True, null=True)
     equipo = models.ForeignKey(
         Equipos,
         on_delete=models.CASCADE,
         null=True
     )
-    libre = models.BooleanField()
+    libre = models.BooleanField(null=True)
 
     def __str__(self):
         return str(self.nombre)

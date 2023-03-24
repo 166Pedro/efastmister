@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'UsersApp.apps.UsersappConfig',
     'EFastMisterApp.apps.EfastmisterappConfig',
+    'WebScrapingApp.apps.WebscrapingappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
