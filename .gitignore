@@ -1,6 +1,4 @@
-# .gitignore
-
-# directorios que no deseas incluir
-.idea/dataSources.xml
+/venv/
+/.idea/
 UsersApp/migrations/
 EFastMisterApp/migrations/
