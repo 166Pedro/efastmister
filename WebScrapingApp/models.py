@@ -4,7 +4,7 @@ from unidecode import unidecode
 
 from EFastMisterApp.models import Jugadores
 
-# Create your models here.
+# Funcion que recoge todos los jugadores a partir de web scraping.
 for i in range(1, 27):
     url = f"https://www.jornadaperfecta.com/jugadores/?pagina={i}"
     page = requests.get(url)
@@ -14,11 +14,13 @@ for i in range(1, 27):
     divsPosicion = soup.find_all('div', class_='jugador-posicion')
     tdNombres = soup.find_all('td', attrs={'itemprop': 'name'})
 
+    # Recorremos la lista de los td que contienen el nombre del jugador
     for td in tdNombres:
         # Creamos una variable que se llame nombre y le añadimos el texto dentro de cada td
         jugador = Jugadores()
         jugador.nombre = td.text
 
+        # Conexion a la pagina concreta de cada jugador (PAGINA DONDE SE ENCUENTRAS SUS DATOS COMPLETOS)
         nombreUrl = unidecode(td.text.replace(" ", "-").replace(".", ""))
         urlJugador = f"https://www.jornadaperfecta.com/jugador/{nombreUrl.lower()}"
         pageJugador = requests.get(urlJugador)
