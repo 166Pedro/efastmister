@@ -78,8 +78,8 @@ class Equipos(models.Model):
 class Jugadores(models.Model):
     nombre = models.CharField(max_length=200, blank=True, null=False)
     posicion = models.CharField(max_length=200, blank=True, null=False)
-    puntuacion = models.IntegerField(null=False)
-    valor = models.IntegerField(null=False)
+    puntuacion = models.CharField(max_length=200, blank=True, null=True)
+    valor = models.IntegerField(null=True)
     equipoReal = models.CharField(max_length=200, blank=True, null=True)
     equipo = models.ForeignKey(
         Equipos,
